@@ -101,7 +101,7 @@ public class RobotContainer
   {
     // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
 
-    driverXbox.a().onTrue((Commands.runOnce(drivebase::zeroGyro)));
+    driverXbox.start().onTrue((Commands.runOnce(drivebase::zeroGyro)));
     driverXbox.x().onTrue(Commands.runOnce(drivebase::addFakeVisionReading));
     driverXbox.b().whileTrue(
         Commands.deferredProxy(() -> drivebase.driveToPose(
